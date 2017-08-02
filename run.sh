@@ -4,7 +4,7 @@ set -euo pipefail
 
 cd $(dirname $0)
 
-SOURCE=$(pwd)/android
+SOURCE=$(pwd)/yocto
 CCACHE=$(pwd)/ccache
 CONTAINER_HOME=/home/build
 CONTAINER=yocto
