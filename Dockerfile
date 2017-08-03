@@ -14,8 +14,7 @@ RUN DEBIAN_FRONTEND="noninteractive" apt-get -q update && \
     apt-get -q clean -y && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     rm -f /var/cache/apt/*.bin && \
-    find /usr/share/man -name "*.gz" | xargs rm -f && \
-    locale-gen en_US.UTF-8
+    find /usr/share/man -name "*.gz" | xargs rm -f
 
 # Set up locale to make Python and BitBake happy
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
