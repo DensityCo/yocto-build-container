@@ -4,14 +4,14 @@ set -euo pipefail
 
 cd $(dirname $0)
 
-SOURCE=$(pwd)/yocto
+SOURCE=$(pwd)/android
 CCACHE=$(pwd)/ccache
 CONTAINER_HOME=/home/build
-CONTAINER=yocto
+CONTAINER=lineageos
 REPOSITORY=stucki/lineageos
+TAG=cm-14.1
 FORCE_BUILD=0
 PRIVILEGED=
-TAG=2.2
 
 while [[ $# > 0 ]]; do
 	key="$1"
@@ -43,6 +43,8 @@ elif [[ $FORCE_BUILD = 1 ]] || ! echo "$IMAGE_EXISTS" | grep -q "$TAG"; then
 	docker build \
 		--pull \
 		-t $REPOSITORY:$TAG \
+		--build-arg hostuid=$(id -u) \
+		--build-arg hostgid=$(id -g) \
 		.
 
 	# After successful build, delete existing containers
