@@ -11,6 +11,7 @@ CONTAINER=yocto
 REPOSITORY=stucki/lineageos
 FORCE_BUILD=0
 PRIVILEGED=
+TAG=2.2
 
 while [[ $# > 0 ]]; do
 	key="$1"
