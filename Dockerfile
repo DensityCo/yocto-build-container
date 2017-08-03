@@ -13,7 +13,7 @@ RUN sed -i 's/main$/main universe/' /etc/apt/sources.list \
       git-core \
       diffstat \
       unzip \
-      texinfo 
+      texinfo \
       gcc-multilib \
       chrpath \
       socat \
