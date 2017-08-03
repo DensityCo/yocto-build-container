@@ -43,8 +43,6 @@ elif [[ $FORCE_BUILD = 1 ]] || ! echo "$IMAGE_EXISTS" | grep -q "$TAG"; then
 	docker build \
 		--pull \
 		-t $REPOSITORY:$TAG \
-		--build-arg hostuid=$(id -u) \
-		--build-arg hostgid=$(id -g) \
 		.
 
 	# After successful build, delete existing containers
